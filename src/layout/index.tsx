@@ -1,6 +1,5 @@
 
 import { Outlet } from "react-router-dom";
-import Sound from "../pages/Sound/Sound";
 
 export default function Layout() {
   return (
