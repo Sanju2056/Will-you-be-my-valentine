@@ -1,0 +1,11 @@
+import Happy from "./Happy.mp3";
+import v1 from "./beforeleaving.mp4";
+import v2 from "./randomvlogs.mp4";
+import v3 from "./riding.mp4";
+import t1 from "./thumb1.jpeg";
+import t2 from "./thumb2.jpeg";
+import t3 from "./thumb3.jpeg";
+import v0 from "./birthday.mp4";
+import t0 from "./thumb0.jpeg";
+export { v1, v2, v3, t1, t2, t3 ,v0,t0 };
+export { Happy };
