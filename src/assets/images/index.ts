@@ -25,9 +25,11 @@ import flower from "./flower.webp";
 import two from "./2.jpeg";
 import p9 from "./9.jpeg";
 import teddy2 from "./teddy.gif";
-
+import bird from "./birf.webp"
+import te from "./te.webp";
 export {
   Teddy,
+  te,
   Doggie,
   Cry,
   p8,
@@ -53,4 +55,5 @@ export {
   p9,
   teddy2,
   p12,
+  bird
 };

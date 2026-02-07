@@ -1,10 +1,10 @@
-import {  Teddy } from "../../assets/images";
+import {  te} from "../../assets/images";
 import { Link } from "react-router-dom";
 const Home = () => {
   return (
-    <div className="relative w-full h-screen flex items-center justify-center bg-[#FEFEFE] opacity-90 overflow-hidden">
+    <div className="relative w-full h-screen flex items-center justify-center bg-pink-300  opacity-90 overflow-hidden">
       {/* Floating hearts */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      {/* <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {[...Array(45)].map((_, i) => (
           <div
             key={i}
@@ -20,9 +20,9 @@ const Home = () => {
             ❤️
           </div>
         ))}
-      </div>
+      </div> */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {[...Array(45)].map((_, i) => (
+        {[...Array(25)].map((_, i) => (
           <div
             key={i}
             className="absolute text-pink-400 opacity-60 animate-float"
@@ -60,16 +60,16 @@ const Home = () => {
 
       {/* Main Card */}
       <div className="relative z-10 text-center p-8">
-        <h1 className="text-3xl md:text-4xl  font-semibold text-red-700 ">
+        <h1 className="text-2xl md:text-3xl  font-semibold text-red-700 ">
           Happy Valentine's Day ❤️
         </h1>
         <img
-          src={Teddy}
+          src={te}
           alt="teddy waving"
-          className="mx-auto  w-72 h-64 bg-black-solid"
+          className="mx-auto  w-72 h-64 bg-pink-300 rounded-2xl shadow-lg my-10 object-cover animate-wave"
         />
 
-        <div className="px-6 py-2 text-xl rounded-full transition mb-4">
+        <div className="px-6 py-2 text-xl text-white-700 rounded-full transition mb-4">
           Click the next button 🥺!
         </div>
 

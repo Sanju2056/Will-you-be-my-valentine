@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { flower } from "../../assets/images";
 const Message = () => {
   return (
-    <div className="relative w-full min-h-screen flex items-start justify-center bg-[#FEFEFE] opacity-90 overflow-y-auto">
+    <div className="relative w-full min-h-screen flex items-start justify-center  opacity-90 overflow-y-auto">
       {/* Floating hearts */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {[...Array(45)].map((_, i) => (

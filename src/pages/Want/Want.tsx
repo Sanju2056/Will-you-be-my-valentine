@@ -5,10 +5,10 @@ import { will } from "../../assets/images";
 export default function Want() {
 
   return (
-    <div className="min-h-screen flex items-center justify-center  relative">
+    <div className="min-h-screen flex items-center justify-center  w-full  relative">
       {/* Floating heart */}
       <span className="absolute right-24 top-1/2 text-pink-300 text-xl animate-pulse">
-        ❤️
+        
       </span>
 
       <div className="text-center space-y-6">
@@ -30,7 +30,7 @@ export default function Want() {
             </button>
           </Link>
           <Link to={"/try"}>
-            <button className="px-12 py-4  bg-gray-200 text-gray-600 rounded-full shadow-sm hover:bg-gray-300 transition">
+            <button className="px-12 py-4 bg-[#fff] text-gray-600 rounded-full shadow-sm hover:bg-gray-300 transition">
               No Ty
             </button>
           </Link>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { p11,two, p15, p9, p22, p12 } from "../../assets/images";
+import { p11, two, p15, p9, p22, p12 } from "../../assets/images";
 
 const photo = [
   { img: two, caption: "Our last photo together 🙁" },
@@ -12,19 +12,18 @@ const photo = [
 
 const Photo = () => {
   return (
-    // UPDATED LINE BELOW: Changed justify-start to md:justify-center
-    <div className="relative w-full min-h-screen bg-gray-100 flex flex-col items-center justify-start md:justify-center overflow-x-hidden">
-      {/* FLOATING HEARTS - Changed absolute to fixed so they cover screen during scroll */}
+    <div className="relative w-full min-h-screen bg-gradient-to-br from-pink-50 via-red-50 to-rose-100 flex flex-col items-center justify-center overflow-x-hidden py-12">
+      {/* FLOATING HEARTS - More subtle */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
-        {[...Array(45)].map((_, i) => (
+        {[...Array(30)].map((_, i) => (
           <div
             key={i}
-            className="absolute text-pink-400 opacity-60 animate-float"
+            className="absolute text-pink-300 opacity-40 animate-float"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              fontSize: `${20 + Math.random() * 25}px`,
-              animationDuration: `${4 + Math.random() * 4}s`,
+              fontSize: `${15 + Math.random() * 20}px`,
+              animationDuration: `${5 + Math.random() * 5}s`,
               animationDelay: `${Math.random() * 3}s`,
             }}
           >
@@ -33,17 +32,17 @@ const Photo = () => {
         ))}
       </div>
 
-      {/* SPARKLES - Changed absolute to fixed */}
+      {/* SPARKLES */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(15)].map((_, i) => (
           <div
             key={i}
             className="absolute text-yellow-300 animate-sparkle"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              fontSize: `${5 + Math.random() * 10}px`,
-              animationDuration: `${1 + Math.random() * 2}s`,
+              fontSize: `${6 + Math.random() * 8}px`,
+              animationDuration: `${1.5 + Math.random() * 2}s`,
               animationDelay: `${Math.random() * 2}s`,
             }}
           >
@@ -53,40 +52,56 @@ const Photo = () => {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="w-full max-w-5xl px-4 py-10 z-10">
-        <div className=" rounded-lg p-6 md:p-10">
-          {/* FLEX LAYOUT - STACK ON MOBILE */}
-          <div className="flex flex-col md:flex-row gap-8 items-center">
-            <p className="text-2xl font-semibold text-red-500">Our Memories :*</p>
-           
+      <div className="w-full max-w-6xl px-4 z-10">
+        {/* HEADER */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-red-500 mb-2 drop-shadow-sm">
+            Our Memories
+          </h1>
+          <p className="text-lg text-red-400">✨ Moments we cherish forever ✨</p>
+        </div>
 
-            {/* RIGHT SIDE GRID */}
-            <div className="md:w-2/3 grid grid-cols-2 sm:grid-cols-3 gap-6">
-              {photo.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center text-center"
-                >
-                  {/* <div className="border-2 border-[#D7A1A1] rounded-full flex items-center justify-center "> */}
-                  <img
-                    src={item.img}
-                    className="w-36 h-36 sm:w-40 sm:h-44 border-2 border-[#D7A1A1]  object-cover mb-2"
-                    alt="circle"
-                  />
-                  {/* </div> */}
-                  <p className="text-sm font-sans">"{item.caption}"</p>
-                </div>
-              ))}
+        {/* GALLERY GRID - Responsive masonry-style */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {photo.map((item, index) => (
+            <div
+              key={index}
+              className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2"
+            >
+              {/* Image Container */}
+              <div className="relative overflow-hidden aspect-square">
+                <img
+                  src={item.img}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  alt={item.caption}
+                />
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              
+              {/* Caption */}
+              <div className="p-4 bg-white">
+                <p className="text-sm md:text-base text-gray-700 text-center font-medium leading-relaxed">
+                  {item.caption}
+                </p>
+              </div>
 
-              {/* RETURN BUTTON */}
-
+              {/* Decorative corner heart */}
+              <div className="absolute top-3 right-3 text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse">
+                💕
+              </div>
             </div>
-              <Link to={"/music"}>
-                <button className="px-12 py-4  text-xl bg-red-500 text-white-700 rounded-full hover:bg-red-700 transition">
-                  Next 🌷
-                </button>
-              </Link>
-          </div>
+          ))}
+        </div>
+
+        {/* NEXT BUTTON - Centered */}
+        <div className="flex justify-center">
+          <Link to="/music">
+            <button className="px-10 py-4 text-lg md:text-xl font-semibold bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2">
+              Next
+              <span className="text-2xl">🌷</span>
+            </button>
+          </Link>
         </div>
       </div>
     </div>
